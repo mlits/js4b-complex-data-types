@@ -65,6 +65,11 @@ describe('Array basics', function() {
         getWithBiggerSum([1, 2, 8], [1, 2, 4, 4] ), [1, 2, 4, 4]
       )
     })
+    it('[1, 2, 4, 4], [1, 2, 8] => [1, 2, 4, 4]', () => {
+      assert.sameOrderedMembers(
+        getWithBiggerSum([1, 2, 4, 4], [1, 2, 8] ), [1, 2, 4, 4]
+      )
+    })
   });
 
 });
