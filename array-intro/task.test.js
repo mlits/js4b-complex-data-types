@@ -1,4 +1,4 @@
-describe('Array basics', function() {
+describe('Array basics', function () {
 
   describe('sortPairDesc', () => {
     it('[1, 3] => [3, 1]', () => {
@@ -17,6 +17,20 @@ describe('Array basics', function() {
       )
     })
   });
+
+  describe('MY TEST', () => {
+    it('[-10, 3, 5, 1, 3, 1, 5, -8, -8, -5, 0, 0, -4] => [5, 5, 3, 3, 1, 1, 0, 0, -4, -5, -8, -8, -10]', () => {
+      var a = [-10, 3, 5, 1, 3, 1, 5, -8, -8, -5, 0, 0, -4];
+      var b = [5, 5, 3, 3, 1, 1, 0, 0, -4, -5, -8, -8, -10];
+      assert.sameOrderedMembers(
+        sortArrayMaxToMin(a), b
+      )
+    })
+  });
+  // a = sortArrayMaxToMin(a);
+  // (JSON.stringify(a)==JSON.stringify(b)) ? (true) : alert (false);
+
+
 
   describe('getLonger', () => {
     it('[1, 2], [1, 2, 3] => [1, 2, 3]', () => {
@@ -62,7 +76,7 @@ describe('Array basics', function() {
     })
     it('[1, 2, 8], [1, 2, 4, 4] => [1, 2, 4, 4]', () => {
       assert.sameOrderedMembers(
-        getWithBiggerSum([1, 2, 8], [1, 2, 4, 4] ), [1, 2, 4, 4]
+        getWithBiggerSum([1, 2, 8], [1, 2, 4, 4]), [1, 2, 4, 4]
       )
     })
   });
