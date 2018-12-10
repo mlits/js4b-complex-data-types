@@ -34,11 +34,9 @@ function getSum(values) {
 // return array where sum of all the numbers is greater.
 // if sum is equal - return longer array
 function getWithBiggerSum(arr1, arr2) {
-  var sum1 = getSum(arr1);
-  var sum2 = getSum(arr2);
-  if (sum1 < sum2){
+  if ( getSum(arr1) < getSum(arr2) ){
     return arr2;
-  } else if (sum1 == sum2){
+  } else if ( getSum(arr1) === getSum(arr2) ){
     return getLonger(arr1, arr2);
   }
   return arr1;
