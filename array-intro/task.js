@@ -1,7 +1,6 @@
 // sort pair of numbers in descending order.
 // pair is always an array of just 2 numbers.
 function sortPairDesc(pair) {
-  debugger;
   pair.reverse();
   return pair;
 }
