@@ -1,13 +1,8 @@
 // sort pair of numbers in descending order.
 // pair is always an array of just 2 numbers.
 function sortPairDesc(pair) {
-  var num1 = pair[0];
-  var num2 = pair[1];
-  if (num1 < num2){
-    pair[0] = num2;
-    pair[1] = num1;
-  }
-  return pair;
+  if (pair[0] > pair[1]) return pair;
+  return [ pair[1], pair[0] ];  
 }
 
 // arr1 and arr2 are arrays.
