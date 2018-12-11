@@ -19,3 +19,11 @@ function removeUnlucky(luckyNumbers) {
   return [];
 }
 
+
+// * the function receives an expression like this one: '3a + [2 - (a * b)]'
+// it should return true if [] and () brackets in the expression are "balanced" - 
+// check tests to understand what that means. and false otherwise
+// hint: organize a stack, using .push() and .pop() methods
+function isBalanced(str) {
+  return;
+}
