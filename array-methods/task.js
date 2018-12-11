@@ -28,8 +28,9 @@ function removeUnlucky(luckyNumbers) {
 // hint: organize a stack, using .push() and .pop() methods
 function isBalanced(str) {
   var array = str.split('');
-  var newArray = []
-  var newString;
+  var newArray = [];
+  var leftArray = [];
+  var rightArray = [];
 
   for (var i = 0; i < array.length; i++) {
     if (array[i] === '(' || array[i] === ')' || array[i] === '[' || array[i] === ']') {
@@ -37,9 +38,17 @@ function isBalanced(str) {
     }
   }
 
-  newString = newArray.join('');
+  leftArray = newArray.slice(0, newArray.length / 2)
+  rightArray = newArray.slice(newArray.length / 2);
 
-  if (newString === '()' || newString === '[]' || newString === '([])' || newString === '[()]') return true
-  return false
+  for (var i = 0; i < leftArray.length; i++) {
+    if (leftArray[i] === '(') {
+      leftArray[i] = ')'
+    } else {
+      leftArray[i] = ']'
+    }
+  }
+
+  return leftArray.reverse().join('') === rightArray.join('') 
 }
-
+ 
