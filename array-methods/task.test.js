@@ -61,9 +61,9 @@ describe('Array methods', function() {
         isBalanced('[(])'), false
       )
     })
-    it('"3a + [2 - (a * b)]" => true', () => {
+    it('"3a + [2 - (a * b)] - (a * b)" => true', () => {
       assert.equal(
-        isBalanced('3a + [2 - (a * b)]'), true
+        isBalanced('3a + [2 - (a * b)] - (a * b)'), true
       )
     })
 
