@@ -23,6 +23,6 @@
         "space-infix-ops": "error",
         "no-extra-semi": "error",
         "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
-        "no-unused-vars": ["error", { "vars": "local" }]
+        "no-unused-vars": ["error", { "vars": "local", "args": "none" }]
     }
 }
