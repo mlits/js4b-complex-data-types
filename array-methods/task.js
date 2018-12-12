@@ -5,7 +5,7 @@ function isVowel(letter) {
   // return vowels.some(function (vow) {
   //   return vow == letter;
   // });
-  return vowels.includes(letter);
+  return vowels.includes(letter.toLowerCase());
 }
 
 // 'hello' => 'olleh'
