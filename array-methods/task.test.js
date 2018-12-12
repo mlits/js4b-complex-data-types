@@ -38,6 +38,12 @@ describe('Array methods', function() {
       removeUnlucky(input);
       assert.sameOrderedMembers(input, [3, 5, 7, 13, 22]);
     })
+    it('[3, 13, 5, 7, 13, 22] => [3, 5, 7, 22]', () => {
+      var input = [3, 13, 5, 7, 13, 22];
+      assert.sameOrderedMembers(
+        removeUnlucky(input), [3, 5, 7, 22]
+      )
+    })
   });
 
   describe('isBalanced', () => {

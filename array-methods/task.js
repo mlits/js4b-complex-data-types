@@ -14,6 +14,7 @@ function reverse(str) {
   return Array.from(str).reverse().join("");
 }
 
+
 // luckyNumbers is an array of numbers which besides the lucky numbers
 // contains 13, exactly once. find and remove 13 from the array.
 // requirements: use .indexOf(), slice() and .splice(),
