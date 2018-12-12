@@ -11,7 +11,7 @@ function isVowel(letter) {
 // 'hello' => 'olleh'
 // hint: you may want to use .split(), .reverse() and one more function ;)
 function reverse(str) {
-  return  Array.from(str).reverse().join("");
+  return Array.from(str).reverse().join("");
 }
 
 // luckyNumbers is an array of numbers which besides the lucky numbers
@@ -19,9 +19,9 @@ function reverse(str) {
 // requirements: use .indexOf(), slice() and .splice(),
 // _DO NOT_ modify the array passed as the parameter
 function removeUnlucky(luckyNumbers) {
-  var myLuckyNumbers=[];
+  var myLuckyNumbers = [];
   luckyNumbers.forEach(element => {
-    if (element !=13) myLuckyNumbers.push(element)  
+    if (element != 13) myLuckyNumbers.push(element)
   });
   return myLuckyNumbers;
 }
@@ -32,14 +32,12 @@ function removeUnlucky(luckyNumbers) {
 // check tests to understand what that means. and false otherwise
 // hint: organize a stack, using .push() and .pop() methods
 function isBalanced(braces) {
-  if (braces=="3a + [2 - (a * b)]") debugger;
   var regExp = new RegExp(/(\(\))|(\[\])| {}/gi);
-  braces=braces.replace(/[^\(\)\[\]]/gi,"")
+  braces = braces.replace(/[^\(\)\[\]]/gi, "")
   var result = true;
   while (braces.search(regExp) != -1) {
     var pos = braces.search(regExp);
     braces = braces.slice(0, pos) + braces.slice(pos + 2);
   }
   if (braces.length == 0) return true; else return false;
-  return;
 }
