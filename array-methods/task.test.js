@@ -61,6 +61,11 @@ describe('Array methods', function() {
         isBalanced('[(])'), false
       );
     });
+    it('"[](" => false', () => {
+      assert.equal(
+        isBalanced('[]('), false
+      );
+    });
     it('"3a + [2 - (a * b)] - (a * b)" => true', () => {
       assert.equal(
         isBalanced('3a + [2 - (a * b)] - (a * b)'), true
