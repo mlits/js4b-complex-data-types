@@ -43,7 +43,7 @@ describe('Array methods', function() {
   describe('isBalanced', () => {
     it('"()[]" => true', () => {
       assert.equal(
-        isBalanced('[]'), true
+        isBalanced('()[]'), true
       )
     })
     it('"[]" => true', () => {
@@ -75,4 +75,5 @@ describe('Array methods', function() {
   });
 
 });
+
 
