@@ -1,4 +1,4 @@
-describe('Array methods', function() {
+describe('Array methods', function () {
 
   describe('isVowel', () => {
     it('"a" => "true"', () => {
@@ -43,9 +43,9 @@ describe('Array methods', function() {
   describe('isBalanced', () => {
     it('"()[]" => true', () => {
       assert.equal(
-        isBalanced('[]'), true
-      )
-    })
+        isBalanced('()[]'), true
+      );
+    });
     it('"[]" => true', () => {
       assert.equal(
         isBalanced('[]'), true

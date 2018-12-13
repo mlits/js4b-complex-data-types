@@ -17,9 +17,7 @@ function reverse(str) {
 // _DO NOT_ modify the array passed as the parameter
 function removeUnlucky(luckyNumbers) {
   var resArr = luckyNumbers.slice();
-  if (resArr.indexOf(13) >= 0) {
-    resArr.splice(resArr.indexOf(13), 1);
-  }
+  resArr.splice(resArr.indexOf(13), 1);
   return resArr;
 }
 
@@ -31,19 +29,14 @@ function removeUnlucky(luckyNumbers) {
 function isBalanced(str) {
   str = str.split('');
   var stack = [];
-  var res = '';
   for (var i = 0; i < str.length; i++) {
-    if ( str[i] == '[' || str[i] == '(' ) {
+    if (str[i] == '[' || str[i] == '(') {
       stack.push(str[i]);
-    } else if (str[i] == ']'){
-      res = stack[stack.length - 1] == '[';
-      stack.pop();
-      return res;
-    } else if (str[i] == ')'){
-      res = stack[stack.length - 1] == '(';
-      stack.pop();
-      return res;
-    }    
+    } else if (str[i] == ']') {
+      return stack.pop() == '[';
+    } else if (str[i] == ')') {
+      return stack.pop() == '(';
+    }
   }
   return stack.length < 0;
 }
