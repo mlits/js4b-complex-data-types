@@ -29,14 +29,17 @@ function removeUnlucky(luckyNumbers) {
 function isBalanced(str) {
   str = str.split('');
   var stack = [];
+  var res = '';
   for (var i = 0; i < str.length; i++) {
     if (str[i] == '[' || str[i] == '(') {
       stack.push(str[i]);
     } else if (str[i] == ']') {
-      return stack.pop() == '[';
+      res = stack.pop() == '[';
+      if (!res) return false;
     } else if (str[i] == ')') {
-      return stack.pop() == '(';
+      res = stack.pop() == '(';
+      if (!res) return false;
     }
   }
-  return stack.length < 0;
+  return res && stack.length <= 0;
 }
