@@ -41,5 +41,5 @@ function isBalanced(str) {
       if (!res) return false;
     }
   }
-  return res && stack.length <= 0;
+  return res && stack.length == 0;
 }
