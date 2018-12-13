@@ -28,27 +28,42 @@ function removeUnlucky(luckyNumbers) {
 // hint: organize a stack, using .push() and .pop() methods
 function isBalanced(str) {
   var array = str.split('');
-  var newArray = [];
-  var leftArray = [];
-  var rightArray = [];
+  var stack = [];
 
   for (var i = 0; i < array.length; i++) {
-    if (array[i] === '(' || array[i] === ')' || array[i] === '[' || array[i] === ']') {
-      newArray.push(array[i]);
+
+    if (array[ i ] === '(' ||  array[ i ] === '[' ||  array[ i ] === ')' ||  array[ i ] === ']') {
+      stack.push(array[i]);
+    }
+
+    if (array[ i ] === ')' && stack[ stack.length - 2 ] === '(' || array[ i ] === ']' && stack[ stack.length - 2 ] === '[') {
+      stack.pop();
+      stack.pop();
     }
   }
 
-  leftArray = newArray.slice(0, newArray.length / 2)
-  rightArray = newArray.slice(newArray.length / 2);
-
-  for (var i = 0; i < leftArray.length; i++) {
-    if (leftArray[i] === '(') {
-      leftArray[i] = ')'
-    } else {
-      leftArray[i] = ']'
-    }
-  }
-
-  return leftArray.reverse().join('') === rightArray.join('') 
+  return stack.length === 0
 }
+
+
+function gel(str) {
+  var array = str.split('');
+  var stack = [];
+
+  for (var i = 0; i < array.length; i++) {
+
+    if (array[i] === '(' ||  array[i] === '[' ||  array[i] === ')' ||  array[i] === ']') {
+      stack.push(array[i]);
+    }
+
+    if (array[i] === ')' && stack[ stack.length - 2 ] === '(' || array[i] === ']' && stack[ stack.length - 2 ] === '[') {
+      stack.pop();
+      stack.pop();
+    }
+  }
+
+  return stack.length === 0
+}
+
+
  
