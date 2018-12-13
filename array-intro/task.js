@@ -7,6 +7,7 @@ function sortPairDesc(array) {
   return array;
 }
 
+
 function sortArrayMaxToMin(array) {
   for (var i = 0; i < array.length; i++) {
     for (var l = i; l < array.length; l++) {
@@ -39,6 +40,7 @@ function getSum(values) {
   return sum;
 }
 
+
 function getWithBiggerSum(arr1, arr2) {
   var sumArr1 = getSum(arr1);
   var sumArr2 = getSum(arr2);
@@ -51,4 +53,3 @@ function getWithBiggerSum(arr1, arr2) {
     return longer;
   }
 }
-
