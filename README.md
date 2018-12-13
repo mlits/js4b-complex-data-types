@@ -7,7 +7,7 @@
 в корневой папке проекта:
 
 ```
-git remote add upstream https://github.com/gerkirill/js4b-loops.git
+git remote add upstream https://github.com/gerkirill/js4b-complex-data-types.git
 git fetch upstream
 git merge upstream/master -m "updates from upstream"
 ```
