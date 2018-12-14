@@ -38,7 +38,7 @@ function isBalanced(str) {
   const bracesClose = [')', ']'];
   var arr = [];
   for (var i = 0; i < str.length; i++) {
-    if (bracesOpen.includes(str[i]) || bracesClose.includes(str[i]) && nextBrace == str[i]) {
+    if (bracesOpen.includes(str[i]) || bracesClose.includes(str[i])) {
       if (bracesOpen.includes(str[i])) arr.push(str[i]);
       if (bracesClose.includes(str[i]) && nextBrace == str[i]) arr.pop(str[i]);
       nextBrace = bracesClose[bracesOpen.indexOf(arr[arr.length - 1])];
