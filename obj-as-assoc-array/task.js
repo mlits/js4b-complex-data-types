@@ -19,12 +19,11 @@ function welcome(language) {
     danish: 'Velkomst',
     dutch: 'Welkom'
   };
-  for (var key in languageWelcomeObj) {
-    if (key == language) {
-      return languageWelcomeObj[key];      
-    }
+  if (language in languageWelcomeObj) {
+    return languageWelcomeObj[language];
+  } else {
+    return languageWelcomeObj.english;
   }
-  return languageWelcomeObj['english'];
 }
 
 /*
@@ -50,13 +49,11 @@ For a valid match, the candidate's minimum salary must be less than or equal to 
 
 Original kata: https://www.codewars.com/kata/job-matching-number-1
 */
+
 function match(candidate, job) {
-  for (var key in candidate) {
-    for (var key2 in job) {
-      if (candidate[key] <= job[key2]) {
-        return true;
-      }
-    }
+  if (candidate.minSalary <= job.maxSalary) {
+    return true;
+  } else {
+    return false;
   }
-  return false;
 }
