@@ -33,18 +33,15 @@ function removeUnlucky(luckyNumbers) {
 // check tests to understand what that means. and false otherwise
 // hint: organize a stack, using .push() and .pop() methods
 function isBalanced(str) {
-var nextBrace='';
-  var bracesOpen = ['(', '['];
-  var bracesClose = [')', ']'];
+  var nextBrace;
+  const bracesOpen = ['(', '['];
+  const bracesClose = [')', ']'];
   var arr = [];
-  for (var i = 0; i <= str.length-1; i++) {
-    if (bracesOpen.includes(str[i])) {
-      arr.push(str[i]);
-      nextBrace = bracesClose[bracesOpen.indexOf(str[i])];
-    }
-    if (bracesClose.includes(str[i]) && nextBrace == str[i]) {
-      arr.pop(str[i]);
-      nextBrace = bracesClose[bracesOpen.indexOf(arr[arr.length-1])];
+  for (var i = 0; i < str.length; i++) {
+    if (bracesOpen.includes(str[i]) || bracesClose.includes(str[i]) && nextBrace == str[i]) {
+      if (bracesOpen.includes(str[i])) arr.push(str[i]);
+      if (bracesClose.includes(str[i]) && nextBrace == str[i]) arr.pop(str[i]);
+      nextBrace = bracesClose[bracesOpen.indexOf(arr[arr.length - 1])];
     }
   }
   return !(!!arr.length);
