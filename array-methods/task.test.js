@@ -31,6 +31,7 @@ describe('Array methods', function() {
       var input = [3, 5, 7, 13, 22];
       assert.sameOrderedMembers(
         removeUnlucky(input), [3, 5, 7, 22]
+
       )
     })
     it('keeps original array untouched', () => {
@@ -72,7 +73,6 @@ describe('Array methods', function() {
         isBalanced('3a + [2 - (a * b)]'), true
       )
     })
-
   });
 
 });
