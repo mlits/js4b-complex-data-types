@@ -27,6 +27,7 @@ function removeUnlucky(luckyNumbers) {
   return myLuckyNumbers;
 }
 
+console.log(isBalanced("["));
 
 // * the function receives an expression like this one: '3a + [2 - (a * b)]'
 // it should return true if [] and () brackets in the expression are "balanced" - 
@@ -34,15 +35,23 @@ function removeUnlucky(luckyNumbers) {
 // hint: organize a stack, using .push() and .pop() methods
 function isBalanced(str) {
   var nextBrace;
+  var isExpression = false;   // если не встретиться скобок то значит это не наш случай
   const bracesOpen = ['(', '['];
   const bracesClose = [')', ']'];
   var arr = [];
-  for (var i = 0; i < str.length; i++) {
-    if (bracesOpen.includes(str[i]) || bracesClose.includes(str[i])) {
-      if (bracesOpen.includes(str[i])) arr.push(str[i]);
-      if (bracesClose.includes(str[i]) && nextBrace == str[i]) arr.pop(str[i]);
-      nextBrace = bracesClose[bracesOpen.indexOf(arr[arr.length - 1])];
+  // Array.from(str).forEach(function(x){   // можно было б такую конструкцию применить, но это читаемость не улучшит
+  for (var i = 0; i < str.length; i++)                                                // проходим по всем єлементам стоки
+  {
+    if (bracesOpen.includes(str[i]) || bracesClose.includes(str[i])) {                // если елемент строки откывающая или закрыв. скобка то делаем
+      isExpression = true;
+      if (bracesOpen.includes(str[i])) {
+        arr.push(str[i]);                              // если открывающая то добавляем
+      } else
+        if (bracesClose.includes(str[i]) && nextBrace == str[i]) {  // если закрывающая и она соответствует ранее открывающей то удаляем
+          arr.pop(str[i]);
+        } else return false;                                        // если ничего не выполнилось но тем мение этот символ скобка то значит она сразу закрывающая или не та пара
+      nextBrace = bracesClose[bracesOpen.indexOf(arr[arr.length - 1])]; // определяется скобка которая может быть закрывающей, исходя из последеней в стеке 
     }
   }
-  return !(!!arr.length);
+  return !arr.length && isExpression;
 }
