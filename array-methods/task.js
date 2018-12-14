@@ -2,15 +2,14 @@
 // false otherwise
 function isVowel(letter) {
   var vowels = ['a', 'o', 'u', 'y', 'i', 'e'];
-  var isVowel = vowels.includes(letter);
+  var isVowel = vowels.includes(letter.toLowerCase());
   return isVowel;
 }
 
 // 'hello' => 'olleh'
 // hint: you may want to use .split(), .reverse() and one more function ;)
 function reverse(str) {
-  var arrayStr = str.split('');
-  arrayStr = arrayStr.reverse();
+  var arrayStr = str.split('').reverse();
   var string = arrayStr.join('');
   return string;
 }
@@ -39,7 +38,6 @@ function isBalanced(str) {
   var arrayForBrackets = [];
   var indexOpeningBrackets = [];
   var indexClosingBrackets = [];
-  var isOnlyClothingBrackets;
   for (let i = 0; i < array.length; i++) {
     if (openingBracketsArray.includes(array[i])) {
       indexOpeningBrackets.push((openingBracketsArray.indexOf(array[i])).toString());
@@ -48,16 +46,13 @@ function isBalanced(str) {
     if (closingBracketsArray.includes(array[i])) {
       indexClosingBrackets.push((closingBracketsArray.indexOf(array[i])).toString());
       if (indexOpeningBrackets[indexOpeningBrackets.length - 1] == indexClosingBrackets[indexClosingBrackets.length - 1]) {
-        isOnlyClothingBrackets = arrayForBrackets.pop();  /// Правильный ли if? Мне не нравится, что он выводит в консоль
+        arrayForBrackets.pop();                           /// Правильный ли if? Мне не нравится, что он выводит в консоль
         indexOpeningBrackets.pop();                       /// Должен же выводить элемент == элемент, верно??
         indexClosingBrackets.pop();
       } else {
         return false;
       }
     }
-  }
-  if (isOnlyClothingBrackets == undefined) {
-    return false;
   }
   if (arrayForBrackets.length != 0) {
     return false;
