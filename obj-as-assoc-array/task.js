@@ -13,7 +13,18 @@ dutch: 'Welkom',
 Original kata: https://www.codewars.com/kata/welcome/javascript
 */
 function welcome(language) {
-  return '';
+  var languageWelcomeObj = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom'
+  };
+  for (var key in languageWelcomeObj) {
+    if (key == language) {
+      return languageWelcomeObj[key];      
+    }
+  }
+  return languageWelcomeObj['english'];
 }
 
 /*
@@ -39,7 +50,13 @@ For a valid match, the candidate's minimum salary must be less than or equal to 
 
 Original kata: https://www.codewars.com/kata/job-matching-number-1
 */
-
 function match(candidate, job) {
-  return;
+  for (var key in candidate) {
+    for (var key2 in job) {
+      if (candidate[key] <= job[key2]) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
