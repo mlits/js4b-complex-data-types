@@ -1,9 +1,9 @@
 describe('Array methods', function() {
 
   describe('isVowel', () => {
-    it('"a" => "true"', () => {
+    it('"o" => "true"', () => {
       assert.equal(
-        isVowel('a'), true
+        isVowel('o'), true
       );
     });
     it('"b" => false', () => {
