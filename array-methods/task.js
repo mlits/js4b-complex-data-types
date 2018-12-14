@@ -32,13 +32,20 @@ function removeUnlucky(luckyNumbers) {
 // it should return true if [] and () brackets in the expression are "balanced" - 
 // check tests to understand what that means. and false otherwise
 // hint: organize a stack, using .push() and .pop() methods
-function isBalanced(braces) {
-  var regExp = new RegExp(/(\(\))|(\[\])| {}/gi);
-  braces = braces.replace(/[^\(\)\[\]]/gi, "")
-  var result = true;
-  while (braces.search(regExp) != -1) {
-    var pos = braces.search(regExp);
-    braces = braces.slice(0, pos) + braces.slice(pos + 2);
+function isBalanced(str) {
+var nextBrace='';
+  var bracesOpen = ['(', '['];
+  var bracesClose = [')', ']'];
+  var arr = [];
+  for (var i = 0; i <= str.length-1; i++) {
+    if (bracesOpen.includes(str[i])) {
+      arr.push(str[i]);
+      nextBrace = bracesClose[bracesOpen.indexOf(str[i])];
+    }
+    if (bracesClose.includes(str[i]) && nextBrace == str[i]) {
+      arr.pop(str[i]);
+      nextBrace = bracesClose[bracesOpen.indexOf(arr[arr.length-1])];
+    }
   }
-  if (braces.length == 0) return true; else return false;
+  return !(!!arr.length);
 }
