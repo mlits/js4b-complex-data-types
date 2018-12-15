@@ -34,5 +34,10 @@ function getSum(values) {
 // if sum is equal - return longer array
 // note: you can use functions implemented above
 function getWithBiggerSum(arr1, arr2) {
+  if (getSum(arr1) < getSum(arr2)) {
+  return arr2;
+  } else if (getSum(arr1) == getSum(arr2)) {
+    return getLonger(arr1, arr2);
+  }
   return arr1;
 }
