@@ -35,9 +35,8 @@ function isBalanced(str) {
   var arr = [];
   for (var i = 0; i < str.length; i++) {
     var ch = str[i];
-    if (ch == '(') arr.push(ch);
+    if (ch == '(' || ch == '[') arr.push(ch);
     if (ch == ')' && arr.pop(ch) != '(') return false;
-    if (ch == '[') arr.push(ch);
     if (ch == ']' && arr.pop(ch) != '[') return false;
   }
   return !arr.length;
