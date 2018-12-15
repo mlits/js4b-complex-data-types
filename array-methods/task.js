@@ -11,7 +11,7 @@ function isVowel(letter) {
 // 'hello' => 'olleh'
 // hint: you may want to use .split(), .reverse() and one more function ;)
 function reverse(str) {
-  return Array.from(str).reverse().join("");
+  return str.split('').reverse().join('');
 }
 
 
@@ -33,15 +33,12 @@ function removeUnlucky(luckyNumbers) {
 // hint: organize a stack, using .push() and .pop() methods
 function isBalanced(str) {
   var arr = [];
-  var isExpression = false;              // флаг для проверки наличия скобок, выходит за рамки теста, но всё-же надо
-  // for (var i=0;i<str.length;i++){  // можно было так
-  //   var x=str[i];
-  str.split('').forEach(function (x) {
-    if (x == '(') arr.push(x);
-    if (x == ')' && arr[arr.length - 1] == '(') arr.pop(x);
-    if (x == '[') arr.push(x);
-    if (x == ']' && arr[arr.length - 1] == '[') arr.pop(x);
-    if (arr.length > 0) isExpression = true;
-  })
-  return !arr.length && isExpression;
+  for (var i = 0; i < str.length; i++) {
+    var ch = str[i];
+    if (ch == '(') arr.push(ch);
+    if (ch == ')' && arr.pop(ch) != '(') return false;
+    if (ch == '[') arr.push(ch);
+    if (ch == ']' && arr.pop(ch) != '[') return false;
+  }
+  return !arr.length;
 }
