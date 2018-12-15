@@ -5,15 +5,20 @@ The Task
 Think of a way to store the languages as a database (eg an object). The languages are listed below so you can copy and paste!
 Write a 'welcome' function that takes a parameter 'language' (always a string), and returns a greeting - if you have it in your database. It should default to English if the language is not in the database.
 
-english: 'Welcome',
-czech: 'Vitejte',
-danish: 'Velkomst',
-dutch: 'Welkom',
+
 
 Original kata: https://www.codewars.com/kata/welcome/javascript
 */
+
+var langBase = {
+  english: 'Welcome',
+  czech: 'Vitejte',
+  danish: 'Velkomst',
+  dutch: 'Welkom',
+};
+
 function welcome(language) {
-  return '';
+  return langBase[language] || langBase.english;
 }
 
 /*
@@ -41,5 +46,5 @@ Original kata: https://www.codewars.com/kata/job-matching-number-1
 */
 
 function match(candidate, job) {
-  return;
+  return !candidate.minSalary || !job.maxSalary ? false : job.maxSalary >= candidate.minSalary;
 }
