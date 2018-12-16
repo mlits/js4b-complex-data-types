@@ -41,6 +41,21 @@ describe('Array methods', function() {
   });
 
   describe('isBalanced', () => {
+    it('"(" => false', () => {
+      assert.equal(
+        isBalanced('('), false
+      );
+    });
+    it('")" => false', () => {
+      assert.equal(
+        isBalanced(')'), false
+      );
+    });
+    it('"(])" => false', () => {
+      assert.equal(
+        isBalanced('(])'), false
+      );
+    });
     it('"[]" => true', () => {
       assert.equal(
         isBalanced('[]'), true

@@ -1,29 +1,55 @@
-// sort pair of numbers in descending order, e.g. [2, 3] should become [3, 2]
-// while [5, 4] should stay [5, 4].
-// pair is always an array of _just_ 2 numbers.
-// please _don't_ use Array.prototype.sort() method
-function sortPairDesc(pair) {
-  return pair;
+function sortPairDesc(array) {
+  if (array[0] < array[1]) {
+    var container = array[0];
+    array[0] = array[1];
+    array[1] = container;
+  }
+  return array;
 }
 
-// arr1 and arr2 are arrays.
-// return longer array or first one.
-// if sizes are equal - return arr1
+
+function sortArrayMaxToMin(array) {
+  for (var i = 0; i < array.length; i++) {
+    for (var l = i; l < array.length; l++) {
+      if (array[i] < array[l + 1]) {
+        var container;
+        container = array[i];
+        array[i] = array[l + 1];
+        array[l + 1] = container;
+      }
+    }
+  }
+  return array;
+}
+
+
 function getLonger(arr1, arr2) {
-  return arr2;
+  if (arr1.length >= arr2.length) {
+    return (arr1);
+  } else {
+    return (arr2);
+  }
 }
 
-// values is an array with numbers.
-// return sum of all the elements.
-// please don't over-complicate it, use _for_ loop
+
 function getSum(values) {
-  return 0;
+  var sum = 0;
+  for (var i = 0; i < values.length; i++) {
+    sum = sum + values[i];
+  }
+  return sum;
 }
 
-// * arr1 and arr2 are arrays with numbers.
-// return array where sum of all the numbers is greater.
-// if sum is equal - return longer array
-// note: you can use functions implemented above
+
 function getWithBiggerSum(arr1, arr2) {
-  return arr1;
+  var sumArr1 = getSum(arr1);
+  var sumArr2 = getSum(arr2);
+  var longer = getLonger(arr1, arr2);
+  if (sumArr1 > sumArr2) {
+    return arr1;
+  } else if (sumArr1 < sumArr2) {
+    return arr2;
+  } else {
+    return longer;
+  }
 }

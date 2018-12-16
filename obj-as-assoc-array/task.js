@@ -13,7 +13,17 @@ dutch: 'Welkom',
 Original kata: https://www.codewars.com/kata/welcome/javascript
 */
 function welcome(language) {
-  return '';
+  var languageWelcomeObj = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom'
+  };
+  if (language in languageWelcomeObj) {
+    return languageWelcomeObj[language];
+  } else {
+    return languageWelcomeObj.english;
+  }
 }
 
 /*
@@ -41,5 +51,9 @@ Original kata: https://www.codewars.com/kata/job-matching-number-1
 */
 
 function match(candidate, job) {
-  return;
+  if (candidate.minSalary <= job.maxSalary) {
+    return true;
+  } else {
+    return false;
+  }
 }
