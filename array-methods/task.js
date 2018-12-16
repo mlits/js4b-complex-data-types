@@ -45,6 +45,7 @@ function isBalanced(str) {
       state = !(stack.pop() + array[i] !== '[]');
     }
 
+    if (state === false) return state;
   }
 
   return state;
