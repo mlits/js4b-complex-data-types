@@ -1,4 +1,4 @@
-describe('Array methods', function() {
+describe('Array methods', function () {
 
   describe('isVowel', () => {
     it('"o" => "true"', () => {
@@ -80,4 +80,3 @@ describe('Array methods', function() {
   });
 
 });
-
