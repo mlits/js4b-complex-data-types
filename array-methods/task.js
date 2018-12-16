@@ -40,19 +40,19 @@ function isBalanced(str) {
       stack.push(array[i]);
     }
 
-    if (array[i] === ')' && (stack.pop() === '(') === false) {
+    if (array[i] === ')' && (stack.pop() !== '(')) {
       return false;
     }
 
-    if (array[i] === ']' && (stack.pop() === '[') === false) {
+    if (array[i] === ']' && (stack.pop() !== '[')) {
       return false;
     }
 
   }
 
-  if (stack.length > 0) { 
-    return false;
-   }
+  if (stack.length) {
+    return false; 
+  }
 
   return true;
 }
