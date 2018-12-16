@@ -1,14 +1,15 @@
 // receives a single English letter and returns true if it's a vowel,
 // false otherwise
 function isVowel(letter) {
-  // var vowels = ['a', 'o', 'u', 'y', 'i', 'e'];
-  return;
+  var vowels = ['a', 'o', 'u', 'y', 'i', 'e'];
+  return vowels.includes(letter);
 }
 
 // 'hello' => 'olleh'
 // hint: you may want to use .split(), .reverse() and one more function ;)
 function reverse(str) {
-  return '';
+  var strReverse = str.split('').reverse().join('');
+  return strReverse;
 }
 
 // luckyNumbers is an array of numbers which besides the lucky numbers
@@ -16,7 +17,10 @@ function reverse(str) {
 // requirements: use .indexOf(), slice() and .splice(),
 // _DO NOT_ modify the array passed as the parameter
 function removeUnlucky(luckyNumbers) {
-  return [];
+  var badNumber = luckyNumbers.indexOf(13);
+  var copy = luckyNumbers.slice();
+  copy.splice(badNumber, 1);
+  return copy;
 }
 
 
@@ -25,5 +29,8 @@ function removeUnlucky(luckyNumbers) {
 // check tests to understand what that means. and false otherwise
 // hint: organize a stack, using .push() and .pop() methods
 function isBalanced(str) {
+  
+  
+  console.log(copy);
   return;
 }
