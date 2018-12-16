@@ -30,32 +30,21 @@ function removeUnlucky(luckyNumbers) {
 // it should return true if [] and () brackets in the expression are "balanced" - 
 // check tests to understand what that means. and false otherwise
 // hint: organize a stack, using .push() and .pop() methods
-
 function isBalanced(str) {
-  var array = str.split('');
-  var openingBracketsArray = ['`', '(', '{', '[', '"', '<', "'"];
-  var closingBracketsArray = ['`', ')', '}', ']', '"', '>', "'"];
-  var arrayForBrackets = [];
-  var indexOpeningBrackets = [];
-  var indexClosingBrackets = [];
+  var array = str.replace(/\s/g, '').split('');
+  var stack = [];
   for (let i = 0; i < array.length; i++) {
-    if (openingBracketsArray.includes(array[i])) {
-      indexOpeningBrackets.push((openingBracketsArray.indexOf(array[i])).toString());
-      arrayForBrackets.push(array[i]);
-    }
-    if (closingBracketsArray.includes(array[i])) {
-      indexClosingBrackets.push((closingBracketsArray.indexOf(array[i])).toString());
-      if (indexOpeningBrackets[indexOpeningBrackets.length - 1] == indexClosingBrackets[indexClosingBrackets.length - 1]) {
-        arrayForBrackets.pop();                           /// Правильный ли if? Мне не нравится, что он выводит в консоль
-        indexOpeningBrackets.pop();                       /// Должен же выводить элемент == элемент, верно??
-        indexClosingBrackets.pop();
+    if (array[i] == '[' || array[i] == '(') {
+      stack.push(array[i]);
+    } else if (array[i] == ']' || array[i] == ')') {
+      if (array[i] == ']' && stack[stack.length - 1] == '[') {
+        stack.pop();
+      } else if (array[i] == ')' && stack[stack.length - 1] == '(') {
+        stack.pop();
       } else {
         return false;
       }
     }
   }
-  if (arrayForBrackets.length != 0) {
-    return false;
-  }
-  return true;
+  return (stack.length == 0);
 }
