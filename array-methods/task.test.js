@@ -1,9 +1,9 @@
-describe('Array methods', function() {
+describe('Array methods', function () {
 
   describe('isVowel', () => {
-    it('"a" => "true"', () => {
+    it('"o" => "true"', () => {
       assert.equal(
-        isVowel('a'), true
+        isVowel('o'), true
       );
     });
     it('"b" => false', () => {
@@ -61,6 +61,16 @@ describe('Array methods', function() {
         isBalanced('[(])'), false
       );
     });
+    it('"[)]" => false', () => {
+      assert.equal(
+        isBalanced('[)]'), false
+      );
+    });
+    it('"[](" => false', () => {
+      assert.equal(
+        isBalanced('[]('), false
+      );
+    });
     it('"3a + [2 - (a * b)] - (a * b)" => true', () => {
       assert.equal(
         isBalanced('3a + [2 - (a * b)] - (a * b)'), true
@@ -70,4 +80,3 @@ describe('Array methods', function() {
   });
 
 });
-

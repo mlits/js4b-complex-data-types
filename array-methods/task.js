@@ -30,7 +30,7 @@ function isBalanced(str) {
   var array = str.split('');
   var stack = [];
   
-  if (str === '') {
+  if (str === '' || array === []) {
     return false;
   }
 
@@ -49,6 +49,10 @@ function isBalanced(str) {
     }
 
   }
+
+  if (stack.length > 0) { 
+    return false;
+   }
 
   return true;
 }
