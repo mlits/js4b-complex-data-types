@@ -1,9 +1,9 @@
 describe('Array basics', function() {
 
   describe('sortPairDesc', () => {
-    it('[1, 3] => [3, 1]', () => {
+    it('[1, 5, 2] => [5, 2, 1]', () => {
       assert.sameOrderedMembers(
-        sortPairDesc([1, 3]), [3, 1]
+        sortPairDesc([1, 5, 2]), [5, 2, 1]
       );
     });
     it('[2, 2] => [2, 2]', () => {
