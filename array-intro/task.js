@@ -1,16 +1,18 @@
 // sort pair of numbers in descending order.
 // pair is always an array of just 2 numbers.
 function sortPairDesc(pair) {
-  return pair.sort(function(a, b){return b-a});
+  return pair.sort(function(a, b) {
+    return b - a;
+  });
 }
 
 // arr1 and arr2 are arrays.
 // return longer array or first one.
 // if sizes are equal - return arr1
 function getLonger(arr1, arr2) {
-  if ( arr1.length >= arr2.length ){
+  if (arr1.length >= arr2.length) {
     return arr1;
-  }else{
+  } else {
     return arr2;
   }
 }
@@ -29,11 +31,11 @@ function getWithBiggerSum(arr1, arr2) {
   var sumArr1 = getSum(arr1);
   var sumArr2 = getSum(arr2);
 
-  if ( sumArr1 > sumArr2 ){
+  if (sumArr1 > sumArr2) {
     return arr1;
-  }else if ( sumArr1 === sumArr2 ) {
-    return getLonger( arr1, arr2 );
-  }else {
+  } else if (sumArr1 === sumArr2) {
+    return getLonger(arr1, arr2);
+  } else {
     return arr2;
   }
 }
