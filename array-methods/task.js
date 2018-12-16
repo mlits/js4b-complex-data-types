@@ -29,18 +29,23 @@ function removeUnlucky(luckyNumbers) {
 function isBalanced(str) {
   var array = str.split('');
   var stack = [];
+  var state;
 
   for (var i = 0; i < array.length; i++) {
 
-    if (array[ i ] === '(' ||  array[ i ] === '[' ||  array[ i ] === ')' ||  array[ i ] === ']') {
+    if (array[i] === '(' || array[i] === '[') {
       stack.push(array[i]);
     }
 
-    if (array[ i ] === ')' && stack[ stack.length - 2 ] === '(' || array[ i ] === ']' && stack[ stack.length - 2 ] === '[') {
-      stack.pop();
-      stack.pop();
+    if (array[i] === ')') {
+      state = !(stack.pop() + array[i] !== '()');
     }
+
+    if (array[i] === ']') {
+      state = !(stack.pop() + array[i] !== '[]');
+    }
+
   }
 
-  return stack.length === 0
+  return state;
 }
