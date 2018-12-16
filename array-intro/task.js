@@ -74,8 +74,6 @@ function getWithBiggerSum(arr1, arr2) {
     return arr1;
   } else if (getSum(arr1) === getSum(arr2)) {
     return getLonger(arr1, arr2);
-  } else {
-    return arr2;
-  }
+  } else return arr2;
 }
 

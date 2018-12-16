@@ -2,10 +2,7 @@
 // false otherwise
 function isVowel(letter) {
   var vowels = ['a', 'o', 'u', 'y', 'i', 'e'];
-  for (var i = 0; i <= vowels.length; i++) {
-    if (letter == vowels[i]) return true;
-    else return false;
-  }
+  return vowels.includes(letter);
 }
 
 // 'hello' => 'olleh'
