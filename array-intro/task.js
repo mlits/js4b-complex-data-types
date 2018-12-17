@@ -1,5 +1,7 @@
-// sort pair of numbers in descending order.
-// pair is always an array of just 2 numbers.
+// sort pair of numbers in descending order, e.g. [2, 3] should become [3, 2]
+// while [5, 4] should stay [5, 4].
+// pair is always an array of _just_ 2 numbers.
+// please _don't_ use Array.prototype.sort() method
 function sortPairDesc(pair) {
   if (pair[0] > pair[1])
     return pair;
@@ -19,6 +21,7 @@ function getLonger(arr1, arr2) {
 
 // values is an array with numbers.
 // return sum of all the elements.
+// please don't over-complicate it, use _for_ loop
 function getSum(values) {
   var sum = 0;
   for (var a = 0; a < values.length; a++) {
@@ -33,6 +36,7 @@ function getSum(values) {
 // * arr1 and arr2 are arrays with numbers.
 // return array where sum of all the numbers is greater.
 // if sum is equal - return longer array
+// note: you can use functions implemented above
 function getWithBiggerSum(arr1, arr2) {
   //   var sum1 = 0;
   //   for (var a = 0;a < arr1.length; a++) {
@@ -50,4 +54,3 @@ function getWithBiggerSum(arr1, arr2) {
   return arr1;
 
 }
-
