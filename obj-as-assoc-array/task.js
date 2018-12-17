@@ -13,7 +13,31 @@ dutch: 'Welkom',
 Original kata: https://www.codewars.com/kata/welcome/javascript
 */
 function welcome(language) {
-  return '';
+  var dataBase = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
+  };
+
+  if (dataBase[language] === undefined) {
+    return dataBase.english;
+  }
+
+  return dataBase[language];
 }
 
 /*
@@ -41,5 +65,10 @@ Original kata: https://www.codewars.com/kata/job-matching-number-1
 */
 
 function match(candidate, job) {
-  return;
+
+  if (candidate.minSalary === undefined || job.maxSalary === undefined) {
+    return error;
+  }
+
+  return candidate.minSalary * 0.9 <= job.maxSalary;
 }

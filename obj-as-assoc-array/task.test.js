@@ -13,8 +13,8 @@ describe('Objects as assoc. array', function () {
     it('"dutch" => "Welkom"', () => {
       assert.equal(welcome('dutch'), 'Welkom');
     });
-    it('"estonian" => "Welcome"', () => {
-      assert.equal(welcome('estonian'), 'Welcome');
+    it('"estonian" => "Tere tulemast"', () => {
+      assert.equal(welcome('estonian'), 'Tere tulemast');
     });
   });
 
