@@ -10,8 +10,9 @@ function sortPairDesc(pair) {
 // return longer array or first one.
 // if sizes are equal - return arr1
 function getLonger(arr1, arr2) {
-  if (arr1.length >= arr2.length)
+  if (arr1.length >= arr2.length) {
     return arr1;
+  }
   return arr2;
 }
 
@@ -28,10 +29,14 @@ function getSum(values) {
 // return array where sum of all the numbers is greater.
 // if sum is equal - return longer array
 function getWithBiggerSum(arr1, arr2) {
-  if (getSum(arr1) == getSum(arr2)) return getLonger(arr1, arr2);
-  if (getSum(arr1) > getSum(arr2))
-    return arr1; else
+  if (getSum(arr1) == getSum(arr2)) {
+    return getLonger(arr1, arr2);
+  }
+  if (getSum(arr1) > getSum(arr2)) {
+    return arr1;
+  } else {
     return arr2;
+  }
 }
 
 

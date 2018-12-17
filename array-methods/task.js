@@ -22,7 +22,7 @@ function reverse(str) {
 function removeUnlucky(luckyNumbers) {
   var myLuckyNumbers = [];
   luckyNumbers.forEach(element => {
-    if (element != 13) myLuckyNumbers.push(element)
+    if (element != 13) myLuckyNumbers.push(element);
   });
   return myLuckyNumbers;
 }

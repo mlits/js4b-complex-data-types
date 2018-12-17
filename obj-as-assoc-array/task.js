@@ -17,8 +17,8 @@ function welcome(language) {
     english: 'Welcome',
     czech: 'Vitejte',
     danish: 'Velkomst',
-    dutch: 'Welkom',
-  }
+    dutch: 'Welkom'
+  };
   return greating[language] || greating.english;
 }
 
