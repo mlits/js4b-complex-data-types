@@ -1,8 +1,9 @@
 // receives a single English letter and returns true if it's a vowel,
 // false otherwise
 function isVowel(letter) {
-  // var vowels = ['a', 'o', 'u', 'y', 'i', 'e'];
-  return;
+  var vowels = ['a', 'o', 'u', 'y', 'i', 'e'];
+  var result = vowels.includes(letter);
+  return result;
 }
 
 // 'hello' => 'olleh'
